@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="login">
+			<result>pages/input.jsp</result>
+		</action>
+		<action name="validate" class="poll.admin.LoginValidateAction">
+			<result name="successAdmin">pages/confirmAdmin.jsp</result>
+			<result name="successPollMaster">pages/confirmPollMaster.jsp</result>
+			<result name="error">pages/error.jsp</result> 
+		</action>
+	</package>
+    
+</struts>
