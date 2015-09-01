@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>Confirmed Details</title>
+        <title>Admin Confirmation</title>
         <style>
         	body {
         		font-family: Calibri, Tahoma, Arial;
@@ -15,5 +15,8 @@
         Authentication Successful <br>
         Welcome Admin!
     </body>
+    <a href="../../PollProject/admin/pages/manageUser.jsp"><br>Manage User</a><br>
+    <a href="../../PollProject/admin/pages/managePoll.jsp"><br>Manage Poll</a><br>
+    
 </html>
 

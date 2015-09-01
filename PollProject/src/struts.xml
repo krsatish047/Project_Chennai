@@ -8,11 +8,68 @@
 		<action name="login">
 			<result>pages/input.jsp</result>
 		</action>
+		<action name="adminHome">
+			<result>pages/confirmAdmin.jsp</result>
+		</action>
+		
+		<action name="pollMasterHome">
+			<result>pages/confirmAdmin.jsp</result>
+		
+		</action>
+		<action name="checkStatus" class="poll.admin.LoginValidateAction" method="checkStatus">
+			<result name="active">pages/ActivePollMaster.jsp</result>
+			<result name="passive">pages/WaitPollMaster.jsp</result>
+		
+		</action>
+		<action name="addPoll" class="poll.admin.AddPollAction">
+			<result name= "success" >pages/addPollWithDatabase.jsp</result>
+		</action>
+		<action name="assignPoll" class="poll.admin.ManagePollAction">
+			<result >pages/assignPoll.jsp</result>
+		</action>
+		<action name="processPollManagement" class="poll.admin.processPollAction">
+			<result name="poll activated" >pages/completedPollManagement.jsp</result>
+		</action>
+		<action name="addPoll1" class="poll.admin.AddPollAction" method="EvaluateSubmit">
+			<result name="added question">pages/addPollWithDatabase.jsp</result>
+			<result name="completed">pages/pollComplete.jsp</result>
+		</action>
 		<action name="validate" class="poll.admin.LoginValidateAction">
 			<result name="successAdmin">pages/confirmAdmin.jsp</result>
-			<result name="successPollMaster">pages/confirmPollMaster.jsp</result>
+			<result name="active">pages/ActivePollMaster.jsp</result>
+			 <result name="passive">pages/WaitPollMaster.jsp</result>
+			
 			<result name="error">pages/error.jsp</result> 
 		</action>
+		<action name ="createUser" class="poll.admin.LoginValidateAction" method="createUser">
+		    <result name= "UserCreated">pages/userCreated.jsp</result>
+		    <result name="error">pages/error.jsp</result> 
+		    
+		    
+		</action>
+		<action name ="create">
+		    <result>pages/createUser.jsp</result>
+		</action>
+		<action name ="viewUser" class="poll.admin.LoginValidateAction" method="getUsers">
+		    <result name="listpopulated" >pages/viewUser.jsp</result>
+		</action>
+		
+		<action name ="submitVote" class="poll.admin.LoginValidateAction" method="getActiveQues">
+		   
+		    <result name ="success">pages/welcomeUser.jsp</result>
+		</action>
+		<action name ="countVote" class="poll.admin.LoginValidateAction" method="getResponse">
+		   
+		    <result name ="success">pages/welcomeUser.jsp</result>
+		</action>
+		
+	<action name="checkPoll" class="poll.admin.LoginValidateAction" method="checkStatus">
+			 <result name="active">pages/ActivePollMaster.jsp</result>
+			 <result name="passive">pages/WaitPollMaster.jsp</result>
+			
+			
+		</action> 
+		
 	</package>
     
 </struts>

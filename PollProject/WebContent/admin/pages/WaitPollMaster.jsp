@@ -4,11 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome Poll master</title>
+<title>Wait</title>
 </head>
 <body>
-	<s:form action="checkPoll">
-	<s:submit label="Check for polls"/>
-	</s:form>
+<h2> Currently you are not assigned to any active poll</h2>
+
+<a href="../admin/checkStatus.action"> Click here to check status</a><br>
+            
+           
+          
+
 </body>
 </html>

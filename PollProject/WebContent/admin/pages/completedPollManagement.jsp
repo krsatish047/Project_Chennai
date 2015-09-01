@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome Poll master</title>
+<title>Poll activated</title>
 </head>
 <body>
-	<s:form action="checkPoll">
-	<s:submit label="Check for polls"/>
-	</s:form>
+
+<h4>You have activated a poll </h4>
+ <a href="../admin/adminHome.action"> Click here to return to home page</a><br>
+
+         
+
 </body>
 </html>
