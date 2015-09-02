@@ -16,27 +16,39 @@
 			<result>pages/confirmAdmin.jsp</result>
 		
 		</action>
-		<action name="checkStatus" class="poll.admin.LoginValidateAction" method="checkStatus">
+		<action name="checkStatus" class="poll.admin.LoginValidateAction" method="ReCheckStatus">
 			<result name="active">pages/ActivePollMaster.jsp</result>
 			<result name="passive">pages/WaitPollMaster.jsp</result>
 		
 		</action>
-		<action name="addPoll" class="poll.admin.AddPollAction">
-			<result name= "success" >pages/addPollWithDatabase.jsp</result>
-		</action>
+		
 		<action name="assignPoll" class="poll.admin.ManagePollAction">
 			<result >pages/assignPoll.jsp</result>
 		</action>
+		
+		<action name="activePoll" class="poll.admin.ManagePollAction" method="activatePolls" >
+			<result name="success" >pages/activatePoll.jsp</result>
+		</action>
+		
+		<action name="activatePoll" class="poll.admin.ManagePollAction" method="activateThePoll" >
+			<result name="pollActivated" >pages/pollActivationConfirm.jsp</result>
+		</action>
+		
+		<action name="addPoll" class="poll.admin.AddPollAction">
+			<result name= "success" >pages/addPollWithDatabase1.jsp</result>
+		</action>
+		
 		<action name="processPollManagement" class="poll.admin.processPollAction">
 			<result name="poll activated" >pages/completedPollManagement.jsp</result>
 		</action>
 		<action name="addPoll1" class="poll.admin.AddPollAction" method="EvaluateSubmit">
-			<result name="added question">pages/addPollWithDatabase.jsp</result>
+			<result name="added question">pages/addPollWithDatabase1.jsp</result>
 			<result name="completed">pages/pollComplete.jsp</result>
+			<result name="added option">pages/addPollWithDatabase1.jsp</result>
 		</action>
 		<action name="validate" class="poll.admin.LoginValidateAction">
 			<result name="successAdmin">pages/confirmAdmin.jsp</result>
-			<result name="active">pages/ActivePollMaster.jsp</result>
+			<result name="active">pages/welcomePollMaster.jsp</result>
 			 <result name="passive">pages/WaitPollMaster.jsp</result>
 			
 			<result name="error">pages/error.jsp</result> 
@@ -64,12 +76,18 @@
 		</action>
 		
 	<action name="checkPoll" class="poll.admin.LoginValidateAction" method="checkStatus">
-			 <result name="active">pages/ActivePollMaster.jsp</result>
+			 <result name="active">pages/welcomePollMaster.jsp</result>
 			 <result name="passive">pages/WaitPollMaster.jsp</result>
 			
 			
 		</action> 
-		
+	<action name="startPoll">
+		<result>pages/ActivePollMaster.jsp</result>
+	</action>
+		<action name="questionSelected" class="poll.admin.QuestionActivationCompletion">
+			<result name="publish">pages/ActivePollMaster.jsp</result>
+			<result name="return">pages/welcomePollMaster.jsp</result>
+		</action>
 	</package>
     
 </struts>

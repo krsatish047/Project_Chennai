@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Poll activated</title>
+<title>Question added successfully</title>
 </head>
 <body>
-
-<h4>You have assigned a poll </h4>
- <a href="../admin/adminHome.action"> Click here to return to home page</a><br>
-
-         
-
+<form action="addAnotherQuestionOrSubmit">
+   <script>
+  
+  alert("Question added successfully");
+   </script><s:submit name="add" value="nextQuestion" label="Add next Question"/>
+   			 <s:submit name="add" value="complete" label="Complete poll" />
+  </form>
 </body>
 </html>

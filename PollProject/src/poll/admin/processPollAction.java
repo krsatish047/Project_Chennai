@@ -6,7 +6,7 @@ public class processPollAction {
 	int pollMaster;
 	public String execute() {
 		DataAccess.updatePollMaster(pollId,pollMaster);
-		DataAccess.activatePoll(pollMaster,pollId);
+		
 		return "poll activated";
 	}
 	public int getPollId() {

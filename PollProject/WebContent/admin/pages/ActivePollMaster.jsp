@@ -8,7 +8,7 @@
 </head>
 <body>
 	<s:form action="questionSelected">
-		<s:iterator value="q">
+			<s:iterator value="%{#session.quesList}">
 			<s:radio name="qno" list="{qno}" />
 			<s:property value="qno" /> )
 			<s:property value="question" /> <br>

@@ -10,18 +10,47 @@ public class ManagePollAction extends ActionSupport {
 	
 	private List<String> pollMaster;
 	private List<Integer> pollId;
-	
+	private List<Integer> activePolls;
+	private Integer selectedPoll;
+
+		public Integer getSelectedPoll() {
+		return selectedPoll;
+	}
+
+	public void setSelectedPoll(Integer selectedPoll) {
+		this.selectedPoll = selectedPoll;
+	}
 
 		public ManagePollAction() {
 			pollMaster = DataAccess.getPollMasters();
 			pollId = DataAccess.getPollIds();
+			
 	
 	}
-
+	
 	@Override
 	public String execute() {
 		
 		return SUCCESS;
+	}
+	public String activatePolls(){
+		
+		setActivePolls(DataAccess.activePolls());
+		
+		return "success";
+	}
+	
+  public String activateThePoll(){
+	  
+	  DataAccess.activatePoll(selectedPoll);
+	  return "pollActivated";
+  }
+	public List<Integer> getActivePolls() {
+		return activePolls;
+	}
+
+	public void setActivePolls(List<Integer> activePolls) {
+		this.activePolls = activePolls;
 	}
 
 	public List<String> getPollMaster() {
